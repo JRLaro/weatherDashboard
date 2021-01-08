@@ -6,6 +6,7 @@ $(document).ready(function () {
         // this targets the users search result
         let search = $("#search-input").val();
 
+
         $("#search-input").val("")
 
         //this is going to run the following function 
@@ -28,7 +29,7 @@ $(document).ready(function () {
             url: "https://api.openweathermap.org/data/2.5/weather?q=" + search + apiKey,
             datatype: "json",
             success: function (response) {
-
+                console.log(response);
                 //converts K to F
                 let tempF = ((response.main.temp - 273.15) * 1.80 + 32).toFixed(0);
 
@@ -37,13 +38,19 @@ $(document).ready(function () {
                 let city = (response.name);
                 let country = (response.sys.country);
                 let date = moment().format('L');
-
+                let icon = response.weather[0].icon;
+                let iconUrl = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
+                let iconImg = $("<img>");
+                iconImg.attr("src", iconUrl);
+                let descript = (response.weather[0].description);
 
                 //reflects the information on to the designated area
                 $("#temp").text(tempF);
                 $("#humid").text(humid);
                 $("#wind").text(wind);
                 $("#cityName").text(city + ", " + country + " " + "(" + date + ")");
+                $("#icon").append(iconImg);
+                $("#descript").text(descript);
 
                 //these are the lat & lon of the User
                 let lon = (response.coord.lon);
@@ -57,6 +64,8 @@ $(document).ready(function () {
 
                 let uv = response2.value;
 
+                $("#uv").removeClass("hidden");
+                    
                 $("#uv").text(uv);
 
                 $.ajax({

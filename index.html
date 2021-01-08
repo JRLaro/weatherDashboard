@@ -55,13 +55,17 @@
         <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9">
             <div id="currentLocation" class="card">
                 <div class="card-body">
-                    <h5 class="card-title text-white"><span id="cityName"></span> - <span class="date"></span><span id="icon"></span></h5>
+                    <h5 class="card-title text-white h3"><span id="cityName"></span> - <span class="date"></span><span id="icon"></span>
+                    </h5>
+                   <div class="col">
+                       <p id="descript" class="text-white text-center h5"> </p>
+                   </div>
                 </div>
                 <ul class="list-group list-group-flush mb-2">
                     <li class="list-group-item">Temperature: <span id="temp"></span> °F</li>
                     <li class="list-group-item">Humidity: <span id="humid"></span> %</li>
                     <li class="list-group-item">Wind Speed: <span id="wind"></span> mph</li>
-                    <li class="list-group-item">UV Index: <span id="uv"></span></li>
+                    <li class="list-group-item">UV Index: <span id="uv" class="bg-danger text-white border-danger p-2 hidden"></span></li>
                     <!-- this gets added to the span of the index - class="rounded border border-danger bg-danger text-white" -->
                 </ul>
             </div>
