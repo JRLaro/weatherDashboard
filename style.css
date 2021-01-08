@@ -1,0 +1,25 @@
+#jumbo {
+    background-color: rgba(50, 50, 135, 0.618);
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+
+    background-image: url(https://resources.altair.com/corp/images/industries_weather_cylc_image_left_interior_desktop_400pxhigh.jpg);
+   
+}
+
+#currentLocation{
+    background-color: rgba(50, 50, 135, 0.618);
+}
+
+#fiveDay{
+    background-color: rgba(50, 50, 135, 0.618);
+}
+
+#searchBtn { 
+   background-color:  rgba(50, 50, 135, 0.618);
+   font-family: 'Raleway', sans-serif;
+    
+}
